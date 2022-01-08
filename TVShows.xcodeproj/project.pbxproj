@@ -33,6 +33,13 @@
 		B652BAE02789F205000EE7FA /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BADF2789F205000EE7FA /* Show.swift */; };
 		B652BAE22789F5ED000EE7FA /* ShowsListProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAE12789F5ED000EE7FA /* ShowsListProviding.swift */; };
 		B652BAE52789F651000EE7FA /* ShowsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAE42789F651000EE7FA /* ShowsListService.swift */; };
+		B652BAE72789FA77000EE7FA /* ShowsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAE62789FA77000EE7FA /* ShowsListViewController.swift */; };
+		B652BAEB2789FA96000EE7FA /* ShowsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAEA2789FA96000EE7FA /* ShowsListViewModel.swift */; };
+		B652BAEE2789FF30000EE7FA /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAED2789FF30000EE7FA /* ViewCodable.swift */; };
+		B652BAF1278A0047000EE7FA /* ShowsListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF0278A0047000EE7FA /* ShowsListItemCell.swift */; };
+		B652BAF4278A02EE000EE7FA /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF3278A02EE000EE7FA /* RoundedImageView.swift */; };
+		B652BAF6278A143B000EE7FA /* UIView+BuildSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF5278A143B000EE7FA /* UIView+BuildSeparator.swift */; };
+		B652BAF8278A1D05000EE7FA /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF7278A1D05000EE7FA /* String+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +71,13 @@
 		B652BADF2789F205000EE7FA /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		B652BAE12789F5ED000EE7FA /* ShowsListProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListProviding.swift; sourceTree = "<group>"; };
 		B652BAE42789F651000EE7FA /* ShowsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListService.swift; sourceTree = "<group>"; };
+		B652BAE62789FA77000EE7FA /* ShowsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListViewController.swift; sourceTree = "<group>"; };
+		B652BAEA2789FA96000EE7FA /* ShowsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListViewModel.swift; sourceTree = "<group>"; };
+		B652BAED2789FF30000EE7FA /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
+		B652BAF0278A0047000EE7FA /* ShowsListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListItemCell.swift; sourceTree = "<group>"; };
+		B652BAF3278A02EE000EE7FA /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		B652BAF5278A143B000EE7FA /* UIView+BuildSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BuildSeparator.swift"; sourceTree = "<group>"; };
+		B652BAF7278A1D05000EE7FA /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,13 +110,16 @@
 		B652BA972789DBBC000EE7FA /* TVShows */ = {
 			isa = PBXGroup;
 			children = (
+				B652BAF2278A02E0000EE7FA /* Views */,
+				B652BAEC2789FF26000EE7FA /* Protocols */,
+				B652BAE82789FA7E000EE7FA /* Screens */,
 				B652BADE2789F1F8000EE7FA /* Models */,
 				B652BAD02789EEF1000EE7FA /* Network */,
 				B652BACB2789EB56000EE7FA /* ViewControllers */,
 				B652BAC82789E9ED000EE7FA /* Coordinator */,
-				B652BAAD2789E0F8000EE7FA /* Supporting Files */,
 				B652BAB82789E6AF000EE7FA /* Util */,
 				B652BAAC2789E0E7000EE7FA /* Extensions */,
+				B652BAAD2789E0F8000EE7FA /* Supporting Files */,
 			);
 			path = TVShows;
 			sourceTree = "<group>";
@@ -118,6 +135,8 @@
 				B652BABB2789E769000EE7FA /* UILabel+BuildLabel.swift */,
 				B652BABD2789E7A0000EE7FA /* UIStackView+BuildStack.swift */,
 				B652BABF2789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift */,
+				B652BAF5278A143B000EE7FA /* UIView+BuildSeparator.swift */,
+				B652BAF7278A1D05000EE7FA /* String+Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +218,48 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B652BAE82789FA7E000EE7FA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B652BAE92789FA85000EE7FA /* ShowsList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B652BAE92789FA85000EE7FA /* ShowsList */ = {
+			isa = PBXGroup;
+			children = (
+				B652BAEF278A002C000EE7FA /* Cells */,
+				B652BAE62789FA77000EE7FA /* ShowsListViewController.swift */,
+				B652BAEA2789FA96000EE7FA /* ShowsListViewModel.swift */,
+			);
+			path = ShowsList;
+			sourceTree = "<group>";
+		};
+		B652BAEC2789FF26000EE7FA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B652BAED2789FF30000EE7FA /* ViewCodable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B652BAEF278A002C000EE7FA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B652BAF0278A0047000EE7FA /* ShowsListItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B652BAF2278A02E0000EE7FA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B652BAF3278A02EE000EE7FA /* RoundedImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,13 +331,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B652BAF8278A1D05000EE7FA /* String+Date.swift in Sources */,
 				B652BAB52789E279000EE7FA /* UIButton+BuildButton.swift in Sources */,
 				B652BACF2789EB8A000EE7FA /* MainCoordinator.swift in Sources */,
+				B652BAEB2789FA96000EE7FA /* ShowsListViewModel.swift in Sources */,
 				B652BAD72789EFB4000EE7FA /* Networking.swift in Sources */,
 				B652BA992789DBBC000EE7FA /* AppDelegate.swift in Sources */,
+				B652BAEE2789FF30000EE7FA /* ViewCodable.swift in Sources */,
+				B652BAF1278A0047000EE7FA /* ShowsListItemCell.swift in Sources */,
 				B652BA9B2789DBBC000EE7FA /* SceneDelegate.swift in Sources */,
 				B652BAE52789F651000EE7FA /* ShowsListService.swift in Sources */,
 				B652BAD22789EF27000EE7FA /* Endpoint.swift in Sources */,
+				B652BAE72789FA77000EE7FA /* ShowsListViewController.swift in Sources */,
 				B652BADB2789EFE5000EE7FA /* APIClient.swift in Sources */,
 				B652BAB72789E2A8000EE7FA /* UIImageView+LoadImage.swift in Sources */,
 				B652BAC02789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift in Sources */,
@@ -286,10 +352,12 @@
 				B652BAAF2789E1B1000EE7FA /* UICell+ReuseIdentifier.swift in Sources */,
 				B652BACA2789EA02000EE7FA /* Coordinator.swift in Sources */,
 				B652BAD52789EFA3000EE7FA /* Providing.swift in Sources */,
+				B652BAF4278A02EE000EE7FA /* RoundedImageView.swift in Sources */,
 				B652BABC2789E769000EE7FA /* UILabel+BuildLabel.swift in Sources */,
 				B652BAD92789EFCB000EE7FA /* NetworkError.swift in Sources */,
 				B652BAE22789F5ED000EE7FA /* ShowsListProviding.swift in Sources */,
 				B652BAB32789E268000EE7FA /* UIActivityIndicator+BuildActivityIndicator.swift in Sources */,
+				B652BAF6278A143B000EE7FA /* UIView+BuildSeparator.swift in Sources */,
 				B652BAE02789F205000EE7FA /* Show.swift in Sources */,
 				B652BADD2789F001000EE7FA /* URLRequestProviding.swift in Sources */,
 				B652BAB12789E1DA000EE7FA /* UIView+Constraints.swift in Sources */,

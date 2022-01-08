@@ -14,6 +14,8 @@ struct Show: Codable, Hashable {
     let genres: [String]?
     let status: String?
     let officialSite: String?
+    let premiered: String?
+    let ended: String?
     let schedule: Schedule?
     let rating: Rating?
     let network: Network?
@@ -28,7 +30,7 @@ struct Show: Codable, Hashable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, name, genres, status, officialSite, schedule, rating, network, image, summary
+        case id, name, genres, status, officialSite, premiered, ended, schedule, rating, network, image, summary
         case urlAddress = "url"
     }
 

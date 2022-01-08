@@ -9,13 +9,28 @@ import UIKit
 
 extension UIView {
 
+    enum ConstraintDistance {
+        case equalTo
+        case lessThanOrEqualTo
+        case greaterThanOrEqualTo
+    }
+
     @discardableResult
     /// Constraint the current view topAnchor with the anchor received by parameter.
     /// - Parameters:
     ///   - anchor: The layout anchor to be used as reference.
     ///   - constant: A custom constant to be used in the constraints.
-    func constraintTop(to anchor: NSLayoutAnchor<NSLayoutYAxisAnchor>, constant: CGFloat = 0) -> Self {
-        self.topAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
+    ///   - distance: Enum controlling if the constraint should be equalTo, lessThanOrEqualTo or greaterThanOrEqualTo the anchor.
+    func constraintTop(to anchor: NSLayoutAnchor<NSLayoutYAxisAnchor>, constant: CGFloat = 0, distance: ConstraintDistance = .equalTo) -> Self {
+        switch distance {
+        case .equalTo:
+            self.topAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
+        case .greaterThanOrEqualTo:
+            self.topAnchor.constraint(greaterThanOrEqualTo: anchor, constant: constant).isActive = true
+        case .lessThanOrEqualTo:
+            self.topAnchor.constraint(lessThanOrEqualTo: anchor, constant: constant).isActive = true
+        }
+
         return self
     }
 
@@ -24,8 +39,16 @@ extension UIView {
     /// - Parameters:
     ///   - anchor: The layout anchor to be used as reference.
     ///   - constant: A custom constant to be used in the constraints.
-    func constraintLeading(to anchor: NSLayoutAnchor<NSLayoutXAxisAnchor>, constant: CGFloat = 0) -> Self {
-        self.leadingAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
+    ///   - distance: Enum controlling if the constraint should be equalTo, lessThanOrEqualTo or greaterThanOrEqualTo the anchor.
+    func constraintLeading(to anchor: NSLayoutAnchor<NSLayoutXAxisAnchor>, constant: CGFloat = 0, distance: ConstraintDistance = .equalTo) -> Self {
+        switch distance {
+        case .equalTo:
+            self.leadingAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
+        case .greaterThanOrEqualTo:
+            self.leadingAnchor.constraint(greaterThanOrEqualTo: anchor, constant: constant).isActive = true
+        case .lessThanOrEqualTo:
+            self.leadingAnchor.constraint(lessThanOrEqualTo: anchor, constant: constant).isActive = true
+        }
         return self
     }
 
@@ -34,8 +57,17 @@ extension UIView {
     /// - Parameters:
     ///   - anchor: The layout anchor to be used as reference.
     ///   - constant: A custom constant to be used in the constraints.
-    func constraintTrailing(to anchor: NSLayoutAnchor<NSLayoutXAxisAnchor>, constant: CGFloat = 0) -> Self {
-        self.trailingAnchor.constraint(equalTo: anchor, constant: (constant <= 0 ? constant : constant * -1)).isActive = true
+    ///   - distance: Enum controlling if the constraint should be equalTo, lessThanOrEqualTo or greaterThanOrEqualTo the anchor.
+    func constraintTrailing(to anchor: NSLayoutAnchor<NSLayoutXAxisAnchor>, constant: CGFloat = 0, distance: ConstraintDistance = .equalTo) -> Self {
+        let formattedConstant = (constant <= 0 ? constant : constant * -1)
+        switch distance {
+        case .equalTo:
+            self.trailingAnchor.constraint(equalTo: anchor, constant: formattedConstant).isActive = true
+        case .greaterThanOrEqualTo:
+            self.trailingAnchor.constraint(greaterThanOrEqualTo: anchor, constant: formattedConstant).isActive = true
+        case .lessThanOrEqualTo:
+            self.trailingAnchor.constraint(lessThanOrEqualTo: anchor, constant: formattedConstant).isActive = true
+        }
         return self
     }
 
@@ -44,8 +76,17 @@ extension UIView {
     /// - Parameters:
     ///   - anchor: The layout anchor to be used as reference.
     ///   - constant: A custom constant to be used in the constraints.
-    func constraintBottom(to anchor: NSLayoutAnchor<NSLayoutYAxisAnchor>, constant: CGFloat = 0) -> Self {
-        self.bottomAnchor.constraint(equalTo: anchor, constant: (constant <= 0 ? constant : constant * -1)).isActive = true
+    ///   - distance: Enum controlling if the constraint should be equalTo, lessThanOrEqualTo or greaterThanOrEqualTo the anchor.
+    func constraintBottom(to anchor: NSLayoutAnchor<NSLayoutYAxisAnchor>, constant: CGFloat = 0, distance: ConstraintDistance = .equalTo) -> Self {
+        let formattedConstant = (constant <= 0 ? constant : constant * -1)
+        switch distance {
+        case .equalTo:
+            self.bottomAnchor.constraint(equalTo: anchor, constant: formattedConstant).isActive = true
+        case .greaterThanOrEqualTo:
+            self.bottomAnchor.constraint(greaterThanOrEqualTo: anchor, constant: formattedConstant).isActive = true
+        case .lessThanOrEqualTo:
+            self.bottomAnchor.constraint(lessThanOrEqualTo: anchor, constant: formattedConstant).isActive = true
+        }
         return self
     }
 

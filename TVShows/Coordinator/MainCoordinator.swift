@@ -15,7 +15,10 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        navigationController.pushViewController(UIViewController(), animated: false)
+        let service = ShowsListService(network: APIClient.shared)
+        let viewModel = ShowsListViewModel(coordinator: self, service: service)
+        let viewController = ShowsListViewController(viewModel: viewModel)
+        navigationController.pushViewController(viewController, animated: false)
     }
 
     func goBack() {

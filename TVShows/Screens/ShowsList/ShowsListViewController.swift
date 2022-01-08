@@ -21,6 +21,7 @@ class ShowsListViewController: UIViewController {
     }
 
     private var currentPage: Int = 1
+    private var shouldFetchUsingPagination: Bool = true
     private let viewModel: ShowsListViewModelProtocol
     private lazy var dataSource: UITableViewDiffableDataSource<Section, Show> = createDataSource()
 
@@ -65,6 +66,7 @@ class ShowsListViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
+        searchController.searchBar.searchTextField.delegate = self
         searchController.searchBar.searchTextField.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
@@ -76,13 +78,17 @@ class ShowsListViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: ShowsListItemCell.reuseIdentifier, for: indexPath) as? ShowsListItemCell
 
             let position: ShowsListItemCell.Position
-            switch indexPath.item {
-            case .zero:
-                position = .first
-            case (self.viewModel.shows.count - 1):
-                position = .last
-            default:
-                position = .default
+            if self.viewModel.shows.count == 1 {
+                position = .unique
+            } else {
+                switch indexPath.item {
+                case .zero:
+                    position = .first
+                case (self.viewModel.shows.count - 1):
+                    position = .last
+                default:
+                    position = .default
+                }
             }
 
             cell?.setUp(for: show, position: position)
@@ -116,12 +122,12 @@ extension ShowsListViewController: ViewCodable {
 
     func updateUI() {
         self.viewModel.fetchShows(forPage: self.currentPage) { [weak self] error in
-            if let error = error {
-                self?.showErrorAlert(withTitle: NSLocalizedString("ERROR", comment: ""),
-                                     message: error.rawValue)
-                return
-            }
             DispatchQueue.main.async {
+                if let error = error {
+                    self?.showErrorAlert(withTitle: NSLocalizedString("ERROR", comment: ""),
+                                         message: error.rawValue)
+                    return
+                }
                 self?.updateSnapshot()
             }
         }
@@ -138,8 +144,38 @@ extension ShowsListViewController: UITableViewDelegate {
 
 // MARK: - UISearchResultsUpdating
 
-extension ShowsListViewController: UISearchResultsUpdating {
+extension ShowsListViewController: UISearchResultsUpdating, UITextFieldDelegate {
+    // The search operation is being performed only when touching "search"
+    // on the keyboard (or pressing "enter" when using the simulator),
+    // to avoid performing a lot of reauests by second.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        viewModel.search(textField.text) { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self?.showErrorAlert(withTitle: NSLocalizedString("ERROR", comment: ""),
+                                         message: error.rawValue)
+                    return
+                }
+                self?.shouldFetchUsingPagination = false
+                self?.updateSnapshot()
+            }
+        }
+        return true
+    }
+
+    // Perform a fetch request when the search bar text becomes empty to reload the shows.
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO
+        guard let emptyText = searchController.searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines), emptyText.isEmpty else { return }
+        viewModel.fetchShows(forPage: self.currentPage) { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self?.showErrorAlert(withTitle: NSLocalizedString("ERROR", comment: ""),
+                                         message: error.rawValue)
+                    return
+                }
+                self?.shouldFetchUsingPagination = true
+                self?.updateSnapshot()
+            }
+        }
     }
 }

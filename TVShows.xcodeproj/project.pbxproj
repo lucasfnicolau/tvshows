@@ -40,6 +40,8 @@
 		B652BAF4278A02EE000EE7FA /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF3278A02EE000EE7FA /* RoundedImageView.swift */; };
 		B652BAF6278A143B000EE7FA /* UIView+BuildSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF5278A143B000EE7FA /* UIView+BuildSeparator.swift */; };
 		B652BAF8278A1D05000EE7FA /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF7278A1D05000EE7FA /* String+Date.swift */; };
+		B652BAFA278A4C5D000EE7FA /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF9278A4C5D000EE7FA /* String+URL.swift */; };
+		B652BAFC278A52AE000EE7FA /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAFB278A52AD000EE7FA /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		B652BAF3278A02EE000EE7FA /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		B652BAF5278A143B000EE7FA /* UIView+BuildSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BuildSeparator.swift"; sourceTree = "<group>"; };
 		B652BAF7278A1D05000EE7FA /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		B652BAF9278A4C5D000EE7FA /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
+		B652BAFB278A52AD000EE7FA /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				B652BABF2789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift */,
 				B652BAF5278A143B000EE7FA /* UIView+BuildSeparator.swift */,
 				B652BAF7278A1D05000EE7FA /* String+Date.swift */,
+				B652BAF9278A4C5D000EE7FA /* String+URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				B652BADF2789F205000EE7FA /* Show.swift */,
+				B652BAFB278A52AD000EE7FA /* SearchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 				B652BAEE2789FF30000EE7FA /* ViewCodable.swift in Sources */,
 				B652BAF1278A0047000EE7FA /* ShowsListItemCell.swift in Sources */,
 				B652BA9B2789DBBC000EE7FA /* SceneDelegate.swift in Sources */,
+				B652BAFA278A4C5D000EE7FA /* String+URL.swift in Sources */,
 				B652BAE52789F651000EE7FA /* ShowsListService.swift in Sources */,
 				B652BAD22789EF27000EE7FA /* Endpoint.swift in Sources */,
 				B652BAE72789FA77000EE7FA /* ShowsListViewController.swift in Sources */,
@@ -359,6 +366,7 @@
 				B652BAB32789E268000EE7FA /* UIActivityIndicator+BuildActivityIndicator.swift in Sources */,
 				B652BAF6278A143B000EE7FA /* UIView+BuildSeparator.swift in Sources */,
 				B652BAE02789F205000EE7FA /* Show.swift in Sources */,
+				B652BAFC278A52AE000EE7FA /* SearchResult.swift in Sources */,
 				B652BADD2789F001000EE7FA /* URLRequestProviding.swift in Sources */,
 				B652BAB12789E1DA000EE7FA /* UIView+Constraints.swift in Sources */,
 			);

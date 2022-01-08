@@ -21,6 +21,7 @@ class ShowsListItemCell: UITableViewCell {
         case first
         case `default`
         case last
+        case unique
     }
 
     // MARK: - Views
@@ -70,6 +71,10 @@ class ShowsListItemCell: UITableViewCell {
             self.separator.isHidden = true
             self.selectedBackgroundView?.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
             self.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        case .unique:
+            self.separator.isHidden = true
+            self.selectedBackgroundView?.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMinYCorner]
+            self.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMinYCorner]
         default:
             self.separator.isHidden = false
             self.selectedBackgroundView?.layer.maskedCorners = []

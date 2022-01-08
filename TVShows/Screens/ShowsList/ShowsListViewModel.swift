@@ -22,6 +22,12 @@ protocol ShowsListViewModelProtocol {
     ///
     func fetchShows(forPage page: Int, completion: @escaping (NetworkError?) -> Void)
 
+    /// Search for a show by a given name.
+    /// - Parameters:
+    ///   - showName: The name String to be searched.
+    ///
+    func search(_ showName: String?, completion: @escaping (NetworkError?) -> Void)
+
     /// Navigate to the chosen show details.
     /// - Parameter index: Index of the selected show.
     func navigateToShowDetails(atIndex index: Int)
@@ -50,6 +56,24 @@ class ShowsListViewModel: ShowsListViewModelProtocol {
                 } else {
                     self.shows = shows
                 }
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
+
+    func search(_ showName: String?, completion: @escaping (NetworkError?) -> Void) {
+        guard let showName = showName?.trimmingCharacters(in: .whitespacesAndNewlines),
+                !showName.isEmpty else {
+            self.fetchShows(completion: completion)
+            return
+        }
+
+        service.search(showName) { result in
+            switch result {
+            case .success(let searchResults):
+                self.shows = searchResults.map { $0.show }
                 completion(nil)
             case .failure(let error):
                 completion(error)

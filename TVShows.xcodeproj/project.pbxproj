@@ -24,6 +24,12 @@
 		B652BACA2789EA02000EE7FA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAC92789EA02000EE7FA /* Coordinator.swift */; };
 		B652BACD2789EB73000EE7FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BACC2789EB73000EE7FA /* MainTabBarController.swift */; };
 		B652BACF2789EB8A000EE7FA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BACE2789EB8A000EE7FA /* MainCoordinator.swift */; };
+		B652BAD22789EF27000EE7FA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAD12789EF27000EE7FA /* Endpoint.swift */; };
+		B652BAD52789EFA3000EE7FA /* Providing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAD42789EFA3000EE7FA /* Providing.swift */; };
+		B652BAD72789EFB4000EE7FA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAD62789EFB4000EE7FA /* Networking.swift */; };
+		B652BAD92789EFCB000EE7FA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAD82789EFCB000EE7FA /* NetworkError.swift */; };
+		B652BADB2789EFE5000EE7FA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BADA2789EFE5000EE7FA /* APIClient.swift */; };
+		B652BADD2789F001000EE7FA /* URLRequestProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BADC2789F001000EE7FA /* URLRequestProviding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,12 @@
 		B652BAC92789EA02000EE7FA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B652BACC2789EB73000EE7FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B652BACE2789EB8A000EE7FA /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B652BAD12789EF27000EE7FA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		B652BAD42789EFA3000EE7FA /* Providing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providing.swift; sourceTree = "<group>"; };
+		B652BAD62789EFB4000EE7FA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		B652BAD82789EFCB000EE7FA /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B652BADA2789EFE5000EE7FA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B652BADC2789F001000EE7FA /* URLRequestProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestProviding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 		B652BA972789DBBC000EE7FA /* TVShows */ = {
 			isa = PBXGroup;
 			children = (
+				B652BAD02789EEF1000EE7FA /* Network */,
 				B652BACB2789EB56000EE7FA /* ViewControllers */,
 				B652BAC82789E9ED000EE7FA /* Coordinator */,
 				B652BAAD2789E0F8000EE7FA /* Supporting Files */,
@@ -138,6 +151,27 @@
 				B652BACC2789EB73000EE7FA /* MainTabBarController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B652BAD02789EEF1000EE7FA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B652BAD32789EF96000EE7FA /* Providing */,
+				B652BAD12789EF27000EE7FA /* Endpoint.swift */,
+				B652BAD62789EFB4000EE7FA /* Networking.swift */,
+				B652BAD82789EFCB000EE7FA /* NetworkError.swift */,
+				B652BADA2789EFE5000EE7FA /* APIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B652BAD32789EF96000EE7FA /* Providing */ = {
+			isa = PBXGroup;
+			children = (
+				B652BAD42789EFA3000EE7FA /* Providing.swift */,
+				B652BADC2789F001000EE7FA /* URLRequestProviding.swift */,
+			);
+			path = Providing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,8 +247,11 @@
 			files = (
 				B652BAB52789E279000EE7FA /* UIButton+BuildButton.swift in Sources */,
 				B652BACF2789EB8A000EE7FA /* MainCoordinator.swift in Sources */,
+				B652BAD72789EFB4000EE7FA /* Networking.swift in Sources */,
 				B652BA992789DBBC000EE7FA /* AppDelegate.swift in Sources */,
 				B652BA9B2789DBBC000EE7FA /* SceneDelegate.swift in Sources */,
+				B652BAD22789EF27000EE7FA /* Endpoint.swift in Sources */,
+				B652BADB2789EFE5000EE7FA /* APIClient.swift in Sources */,
 				B652BAB72789E2A8000EE7FA /* UIImageView+LoadImage.swift in Sources */,
 				B652BAC02789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift in Sources */,
 				B652BABA2789E6BA000EE7FA /* DesignSystem.swift in Sources */,
@@ -222,8 +259,11 @@
 				B652BACD2789EB73000EE7FA /* MainTabBarController.swift in Sources */,
 				B652BAAF2789E1B1000EE7FA /* UICell+ReuseIdentifier.swift in Sources */,
 				B652BACA2789EA02000EE7FA /* Coordinator.swift in Sources */,
+				B652BAD52789EFA3000EE7FA /* Providing.swift in Sources */,
 				B652BABC2789E769000EE7FA /* UILabel+BuildLabel.swift in Sources */,
+				B652BAD92789EFCB000EE7FA /* NetworkError.swift in Sources */,
 				B652BAB32789E268000EE7FA /* UIActivityIndicator+BuildActivityIndicator.swift in Sources */,
+				B652BADD2789F001000EE7FA /* URLRequestProviding.swift in Sources */,
 				B652BAB12789E1DA000EE7FA /* UIView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,9 @@
 		B652BABE2789E7A0000EE7FA /* UIStackView+BuildStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BABD2789E7A0000EE7FA /* UIStackView+BuildStack.swift */; };
 		B652BAC02789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BABF2789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift */; };
 		B652BAC32789E805000EE7FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B652BAC52789E805000EE7FA /* Localizable.strings */; };
+		B652BACA2789EA02000EE7FA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAC92789EA02000EE7FA /* Coordinator.swift */; };
+		B652BACD2789EB73000EE7FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BACC2789EB73000EE7FA /* MainTabBarController.swift */; };
+		B652BACF2789EB8A000EE7FA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BACE2789EB8A000EE7FA /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		B652BABD2789E7A0000EE7FA /* UIStackView+BuildStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+BuildStack.swift"; sourceTree = "<group>"; };
 		B652BABF2789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowErrorAlert.swift"; sourceTree = "<group>"; };
 		B652BAC42789E805000EE7FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B652BAC92789EA02000EE7FA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B652BACC2789EB73000EE7FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B652BACE2789EB8A000EE7FA /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,8 @@
 		B652BA972789DBBC000EE7FA /* TVShows */ = {
 			isa = PBXGroup;
 			children = (
+				B652BACB2789EB56000EE7FA /* ViewControllers */,
+				B652BAC82789E9ED000EE7FA /* Coordinator */,
 				B652BAAD2789E0F8000EE7FA /* Supporting Files */,
 				B652BAB82789E6AF000EE7FA /* Util */,
 				B652BAAC2789E0E7000EE7FA /* Extensions */,
@@ -113,6 +121,23 @@
 				B652BAB92789E6BA000EE7FA /* DesignSystem.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		B652BAC82789E9ED000EE7FA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B652BAC92789EA02000EE7FA /* Coordinator.swift */,
+				B652BACE2789EB8A000EE7FA /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B652BACB2789EB56000EE7FA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B652BACC2789EB73000EE7FA /* MainTabBarController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,13 +212,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B652BAB52789E279000EE7FA /* UIButton+BuildButton.swift in Sources */,
+				B652BACF2789EB8A000EE7FA /* MainCoordinator.swift in Sources */,
 				B652BA992789DBBC000EE7FA /* AppDelegate.swift in Sources */,
 				B652BA9B2789DBBC000EE7FA /* SceneDelegate.swift in Sources */,
 				B652BAB72789E2A8000EE7FA /* UIImageView+LoadImage.swift in Sources */,
 				B652BAC02789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift in Sources */,
 				B652BABA2789E6BA000EE7FA /* DesignSystem.swift in Sources */,
 				B652BABE2789E7A0000EE7FA /* UIStackView+BuildStack.swift in Sources */,
+				B652BACD2789EB73000EE7FA /* MainTabBarController.swift in Sources */,
 				B652BAAF2789E1B1000EE7FA /* UICell+ReuseIdentifier.swift in Sources */,
+				B652BACA2789EA02000EE7FA /* Coordinator.swift in Sources */,
 				B652BABC2789E769000EE7FA /* UILabel+BuildLabel.swift in Sources */,
 				B652BAB32789E268000EE7FA /* UIActivityIndicator+BuildActivityIndicator.swift in Sources */,
 				B652BAB12789E1DA000EE7FA /* UIView+Constraints.swift in Sources */,

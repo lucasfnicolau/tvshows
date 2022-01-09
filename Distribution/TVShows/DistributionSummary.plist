@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TVShows.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>bitcode</key>
+			<true/>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>5DD18C2B1FF83F77222D03E54719B820702F3528</string>
+				<key>dateExpires</key>
+				<string>14/09/22</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>87G2Y58K9U.com.lucasfnicolau.TVShows</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>87G2Y58K9U</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>87G2Y58K9U.com.lucasfnicolau.TVShows</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>TVShows.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>663034ac-b1bc-4ac5-bc57-f53f303bb3c6</string>
+				<key>dateExpires</key>
+				<string>08/01/23</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: com.lucasfnicolau.TVShows</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>87G2Y58K9U</string>
+				<key>name</key>
+				<string>Lucas Nicolau</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>

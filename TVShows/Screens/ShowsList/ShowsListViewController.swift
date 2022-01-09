@@ -12,6 +12,7 @@ class ShowsListViewController: UIViewController {
 
     private enum Constant {
         static let cellHeight: CGFloat = UIScreen.main.bounds.height / 6.5
+        static let scrollThreshold: CGFloat = 780
     }
 
     // MARK: - Properties
@@ -176,6 +177,23 @@ extension ShowsListViewController: UISearchResultsUpdating, UITextFieldDelegate 
                 }
                 self?.shouldFetchUsingPagination = true
                 self?.updateSnapshot()
+            }
+        }
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard shouldFetchUsingPagination, scrollView.contentSize.height != .zero else { return }
+        if (scrollView.contentSize.height - scrollView.contentOffset.y < Constant.scrollThreshold) {
+            self.shouldFetchUsingPagination = false
+            self.currentPage += 1
+            viewModel.fetchShows(forPage: self.currentPage) { [weak self] error in
+                if let error = error {
+                    self?.showErrorAlert(withTitle: NSLocalizedString("ERROR", comment: ""),
+                                         message: error.rawValue)
+                    return
+                }
+                self?.updateSnapshot()
+                self?.shouldFetchUsingPagination = true
             }
         }
     }

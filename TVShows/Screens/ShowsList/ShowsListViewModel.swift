@@ -82,6 +82,7 @@ class ShowsListViewModel: ShowsListViewModelProtocol {
     }
 
     func navigateToShowDetails(atIndex index: Int) {
-        // TODO
+        guard index >= .zero && index < self.shows.count else { return }
+        self.coordinator?.goToShowDetail(self.shows[index])
     }
 }

@@ -42,6 +42,13 @@
 		B652BAF8278A1D05000EE7FA /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF7278A1D05000EE7FA /* String+Date.swift */; };
 		B652BAFA278A4C5D000EE7FA /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAF9278A4C5D000EE7FA /* String+URL.swift */; };
 		B652BAFC278A52AE000EE7FA /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAFB278A52AD000EE7FA /* SearchResult.swift */; };
+		B652BAFF278A5551000EE7FA /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BAFE278A5551000EE7FA /* ShowDetailViewController.swift */; };
+		B652BB01278A5562000EE7FA /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BB00278A5562000EE7FA /* ShowDetailViewModel.swift */; };
+		B652BB03278A5837000EE7FA /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BB02278A5837000EE7FA /* Season.swift */; };
+		B652BB06278A59D2000EE7FA /* EpisodeListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BB05278A59D2000EE7FA /* EpisodeListItemCell.swift */; };
+		B652BB08278A5AD8000EE7FA /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BB07278A5AD8000EE7FA /* Episode.swift */; };
+		B652BB0A278A5F16000EE7FA /* ShowDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BB09278A5F16000EE7FA /* ShowDetailService.swift */; };
+		B652BB0C278A5F36000EE7FA /* ShowDetailProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652BB0B278A5F36000EE7FA /* ShowDetailProviding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +89,13 @@
 		B652BAF7278A1D05000EE7FA /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		B652BAF9278A4C5D000EE7FA /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		B652BAFB278A52AD000EE7FA /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		B652BAFE278A5551000EE7FA /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
+		B652BB00278A5562000EE7FA /* ShowDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModel.swift; sourceTree = "<group>"; };
+		B652BB02278A5837000EE7FA /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		B652BB05278A59D2000EE7FA /* EpisodeListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListItemCell.swift; sourceTree = "<group>"; };
+		B652BB07278A5AD8000EE7FA /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		B652BB09278A5F16000EE7FA /* ShowDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailService.swift; sourceTree = "<group>"; };
+		B652BB0B278A5F36000EE7FA /* ShowDetailProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailProviding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +217,7 @@
 				B652BAD42789EFA3000EE7FA /* Providing.swift */,
 				B652BADC2789F001000EE7FA /* URLRequestProviding.swift */,
 				B652BAE12789F5ED000EE7FA /* ShowsListProviding.swift */,
+				B652BB0B278A5F36000EE7FA /* ShowDetailProviding.swift */,
 			);
 			path = Providing;
 			sourceTree = "<group>";
@@ -212,6 +227,8 @@
 			children = (
 				B652BADF2789F205000EE7FA /* Show.swift */,
 				B652BAFB278A52AD000EE7FA /* SearchResult.swift */,
+				B652BB02278A5837000EE7FA /* Season.swift */,
+				B652BB07278A5AD8000EE7FA /* Episode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				B652BAE42789F651000EE7FA /* ShowsListService.swift */,
+				B652BB09278A5F16000EE7FA /* ShowDetailService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -227,6 +245,7 @@
 		B652BAE82789FA7E000EE7FA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B652BAFD278A5536000EE7FA /* ShowDetail */,
 				B652BAE92789FA85000EE7FA /* ShowsList */,
 			);
 			path = Screens;
@@ -264,6 +283,24 @@
 				B652BAF3278A02EE000EE7FA /* RoundedImageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B652BAFD278A5536000EE7FA /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B652BB04278A59B4000EE7FA /* Cells */,
+				B652BAFE278A5551000EE7FA /* ShowDetailViewController.swift */,
+				B652BB00278A5562000EE7FA /* ShowDetailViewModel.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		B652BB04278A59B4000EE7FA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B652BB05278A59D2000EE7FA /* EpisodeListItemCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,24 +377,31 @@
 				B652BAF8278A1D05000EE7FA /* String+Date.swift in Sources */,
 				B652BAB52789E279000EE7FA /* UIButton+BuildButton.swift in Sources */,
 				B652BACF2789EB8A000EE7FA /* MainCoordinator.swift in Sources */,
+				B652BB06278A59D2000EE7FA /* EpisodeListItemCell.swift in Sources */,
 				B652BAEB2789FA96000EE7FA /* ShowsListViewModel.swift in Sources */,
 				B652BAD72789EFB4000EE7FA /* Networking.swift in Sources */,
 				B652BA992789DBBC000EE7FA /* AppDelegate.swift in Sources */,
 				B652BAEE2789FF30000EE7FA /* ViewCodable.swift in Sources */,
 				B652BAF1278A0047000EE7FA /* ShowsListItemCell.swift in Sources */,
+				B652BB08278A5AD8000EE7FA /* Episode.swift in Sources */,
 				B652BA9B2789DBBC000EE7FA /* SceneDelegate.swift in Sources */,
 				B652BAFA278A4C5D000EE7FA /* String+URL.swift in Sources */,
+				B652BB0A278A5F16000EE7FA /* ShowDetailService.swift in Sources */,
 				B652BAE52789F651000EE7FA /* ShowsListService.swift in Sources */,
 				B652BAD22789EF27000EE7FA /* Endpoint.swift in Sources */,
+				B652BB03278A5837000EE7FA /* Season.swift in Sources */,
+				B652BB01278A5562000EE7FA /* ShowDetailViewModel.swift in Sources */,
 				B652BAE72789FA77000EE7FA /* ShowsListViewController.swift in Sources */,
 				B652BADB2789EFE5000EE7FA /* APIClient.swift in Sources */,
 				B652BAB72789E2A8000EE7FA /* UIImageView+LoadImage.swift in Sources */,
 				B652BAC02789E7CE000EE7FA /* UIViewController+ShowErrorAlert.swift in Sources */,
 				B652BABA2789E6BA000EE7FA /* DesignSystem.swift in Sources */,
+				B652BB0C278A5F36000EE7FA /* ShowDetailProviding.swift in Sources */,
 				B652BABE2789E7A0000EE7FA /* UIStackView+BuildStack.swift in Sources */,
 				B652BACD2789EB73000EE7FA /* MainTabBarController.swift in Sources */,
 				B652BAAF2789E1B1000EE7FA /* UICell+ReuseIdentifier.swift in Sources */,
 				B652BACA2789EA02000EE7FA /* Coordinator.swift in Sources */,
+				B652BAFF278A5551000EE7FA /* ShowDetailViewController.swift in Sources */,
 				B652BAD52789EFA3000EE7FA /* Providing.swift in Sources */,
 				B652BAF4278A02EE000EE7FA /* RoundedImageView.swift in Sources */,
 				B652BABC2789E769000EE7FA /* UILabel+BuildLabel.swift in Sources */,

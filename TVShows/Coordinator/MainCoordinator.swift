@@ -21,6 +21,13 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: false)
     }
 
+    func goToShowDetail(_ show: Show) {
+        let service = ShowDetailService(network: APIClient.shared)
+        let viewModel = ShowDetailViewModel(coordinator: self, service: service, show: show)
+        let viewController = ShowDetailViewController(viewModel: viewModel)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
     func goBack() {
         navigationController.popViewController(animated: true)
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Show
-struct Show: Codable, Hashable {
+struct Show: Decodable, Hashable {
     let id: Int
     let name: String?
     let genres: [String]?

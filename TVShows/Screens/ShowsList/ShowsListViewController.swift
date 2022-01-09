@@ -63,7 +63,7 @@ class ShowsListViewController: UIViewController {
 
     private func setUpSearchBar() {
         self.title = self.viewModel.title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.searchBar.searchTextField.delegate = self
@@ -138,7 +138,8 @@ extension ShowsListViewController: ViewCodable {
 
 extension ShowsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO
+        self.viewModel.navigateToShowDetails(atIndex: indexPath.item)
+        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
     }
 }
 
